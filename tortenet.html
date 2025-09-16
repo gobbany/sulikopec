@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iskolánk - Szeretettel tanulni</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .container1 {
+            max-width: 1200px;
+            border-left: 5px solid #4a7bc8;
+            margin: 0 auto;
+            padding: 0 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+        }
+        .container1:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #4a7bc8 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        nav {
+            background-color: #1e3d72;
+            padding: 15px 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu li a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        main {
+            padding: 40px 0;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            color: #2c5aa0;
+            margin-bottom: 20px;
+            font-size: 28px;
+            border-bottom: 3px solid #4a7bc8;
+            padding-bottom: 10px;
+        }
+
+        .hero {
+            background-image: url("sulikep.jpg");
+            background-repeat:no-repeat;
+            background-position: center;
+            color: rgb(237, 6, 25);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .quick-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+         .info-card {
+            background: #f0f8ff;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 5px solid #4a7bc8;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+         
+
+        .info-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #1e3d72;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: #4a7bc8;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                text-align: center;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <a href="index.html" class="logo">Iskolánk</a>
+                    <div class="tagline">Szeretettel és tisztelettel tanulni</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="osztalyok.html">Osztályaink</a></li>
+                <li><a href="dokumentumok.html">Dokumentumok</a></li>
+                <li><a href="tortenet.html">Történet</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+
+    <main>
+        <div class="container1">
+            <section class="section">
+                <h2>Falutörténet</h2>
+                <p>1459-ben Kepecz néven említik. A mai falu a 17. században Kis- és Nagyköpec egyesüléséből keletkezett. Az egykori Kisköpec helyén ma is találhatók romtöredékek. Egykori kápolnája a Varjúvár nevű magaslaton állott, ahol egykor a Varjúvár nevű kora középkori erőd is volt, eredete, sorsa ismeretlen, nyoma alig maradt. Határában a Csemeréte nevű helyen volt 1661-ben a csemeréti-csata, ahol Barcsay Gáspár serege legyőzte a meghódolni nem akaró háromszéki székelyeket. 1848. december 9-én a köpeci híd közelében ütköztek meg a székelyek a császári csapatokkal, a falut elfoglaló Heydte tábornok éjszaka felgyújttatta azt, a menekülők közül sokakat lekaszaboltak. Innen származik a mondás: "Baj van Köpecen". December 13-án a székelyek ellentámadása a Keresztútnál győzelemmel végződött. 1887-ben a csata helyén levő tömegsírnál fejfát állítottak. 1901-ben a falu piacára emlékoszlop került. A keresztúti-csata helyén 1970-ben állították fel a törött kardot ábrázoló emlékművet. 1944-ben a román Maniu-gárdisták pusztítottak itt.</p>
+                <p>A falu határában 1872 és 1967 között lignitbánya működött.</p>
+                <p>1910-ben 1299 lakosából 1286 magyar, 7 román, 3 német, 3 szlovák volt. A trianoni békeszerződésig Háromszék vármegye Miklósvári járásához tartozott. 1992-ben 1213 lakosából 1190 magyar, 22 román, 1 német volt.</p>   
+            </section>
+        </div>
+        <div class="container1">
+            <section class="section">
+                <h2>Látniválók</h2>
+                <p><strong>•</strong> A falu református temploma középkori eredetű, mai formáját 1928-ban nyerte el, védőfala 1819-ben épült.</p>
+                <p><strong>•</strong> Ortodox temploma 1712-ben épült, 1881-ben újjáépítették.</p>
+                <p><strong>•</strong> A Hoffmann-kúria a 19. században klasszicista stílusban épült.</p>
+                <p><strong>•</strong> A köpeci szil az Év fája lett Romániában 2011-ben.</p>
+            </section>
+        </div>
+         <div class="container1">
+            <section class="section">
+                <h2>Híres emberek</h2>
+                <p><strong>•</strong> Itt született 1875-ben <strong>Kamenyiczky Etelka</strong> írónő.</p>
+                <p><strong>•</strong> Innen származik és itt élt 1919-től 1941-ig <strong>Köpeczi Sebestyén József</strong> heraldikus és művészettörténész.</p>
+                <p><strong>•</strong> Itt született 1923. június 30-án <strong>Györffy Rózsa</strong>, író, színésznő.</p>
+                <p><strong>•</strong> Itt született 1936. február 9-én <strong>Gúzs Imre</strong> író, újságíró.</p>
+            </section>
+        </div>
+         <div class="container1">
+            <section class="section">
+                <h2>Iskolatörténet</h2>
+                <p>A köpeci iskolai oktatás legelső írásos dokumentuma egy 1698. augusztus 29-én keltezett birtokrendezési irat, melyben Nagy Andrást, mint Köpetzi Schola Mestert említik. Két korábbi írásban azonban már találkozunk iskolai oktatást sejtető adatokkal, melyek közül az első egy 1603-as birtokokmány, amelyen György deák neve szerepel, a következő az 1635-ös I. Rákóczi György fejedelem parancsára tartott lustra, amelyen István deák nevével találkozunk. Ezen adatok szerint a köpeci iskolai oktatás közel 400 éves múltra tekint vissza.</p>
+                <p>Kezdetben a tanítás feladatát az egyház vállalja magára. A tanítás az "oskolamester" feladata, aki egyben harangozó is. Lakásának egyik szobájában tanított mindaddig, míg az udvaron iskolahelyiséget építettek.</p>
+                <p>Az 1700-as évekből már több tanító (iskolamester) nevével találkozunk a régi iratokban, egyházi anyakönyvekben. Úgy a legrégibb anyakönyvben "pro memoria" megjegyzés alatt két iskolamesterről történik említés: Bodosi Nagy Istvánról, ki 25 évig tanított, őt követte 1776-tól Szabó Boldizsár, kinek idejében szűk kis iskolát építenek a mesteri udvaron.</p>
+                <p>1783-1838 között, 55 évig Kis Elek tanított, majd Sebestyén József követte őt, kinek visszavonulásával a harangozó-tanítók sorozata bezárul Köpecen.</p>
+                <p>1847-ben a kolera fellépése miatt szünetel a tanítás Köpecen. 1848. december 9-én osztrák, szász és román csapatok felégetik a falut. 51 embert gyilkolnak meg, köztük a papot, a bírót és Belle András iskolamestert, kit lándzsadöfésekkel kínoztak halálra. A nagy pusztulás miatt a tanítás egy évig szünetelt.</p>
+                <p>1849-ben Belle András helyébe Gáspár Istvánt hozták tanítónak, aki összesen 62 évet tanított, melyből 53 évet Köpecen. Valóságos tanítói dinasztiát alapított: 10 élő gyermeke volt, amelyből 5 tanítói pályát választott. Köpeci utódja az 1873-ban megválasztott ifj. Gáspár István, ki iskolán kívüli tevékenységként kasos méhészettel, faiskolával és az EMKE énekkar tanításával is foglalkozott. Halála után Magyarországon lakó fiai közül Vilmos hazatér, hogy folytassa a 104 éves Gáspár-múltat, de nem sikerül tartózkodási engedélyt vagy román állampolgárságot szerezzen és kénytelen visszatérni Magyarországra.</p>
+                <p>1905. szeptember 1-én államosítják a református egyház által épített (1895) templom melletti iskolai épületet, kántor-tanítói lakásával együtt, albérletbe szorítva a felekezeti oktatást, ami ugyan párhuzamosan folyik az államival 1948-ig. Az iskola új elnevezése "állami elemi (népi) iskola" lesz, a felügyeletet az állam részéről a sepsiszentgyörgyi királyi tanfelügyelőség gyakorolja.</p>
+                <p>Az épületgondok megoldására a református egyház 1935-ben a Hitelszövetkezettől megvásárolta a főút melletti gabonaraktárt, amit közadakozásból Lülei Imre építőmester irányításával átépíttetett iskolává. Az 1936-37-es iskolaévet már az új iskolaépületben kezdik és folytatják a felekezeti oktatást mindaddig, amíg az állami rendelkezés végképp megszűnteti.</p>
+                <p>Az 1947-es tanügyi reform értelmében egyesítik az állami és felekezeti iskolákat "általános iskola" elnevezéssel és a templom melletti épületbe kap helyet az I-IV. osztály, a baróti út melletti épületben az V-VIII. osztály. Ez az utóbbi épület az évtizedek alatt teljesen tönkrement, mivel általános javításra nem fordítottak anyagiakat, ugyanis tulajdonjogilag az egyház ingatlana maradt. Berendezési tárgyai, felszerelései teljesen elavultak, akárcsak az épület, ezért a baróti önkormányzat egy másik épületet biztosított az iskolának, melyet a Phare program keretében felújítottak és a 2001-2002-es tanévtől itt tanul egy fedél alatt az I-VIII. osztály.</p>
+                <p>Ennek a Hoffmann Géza bányaigazgató által építtetett kúriának történelmi jelentőségű múltja van. Az első világháború idején kórháznak volt berendezve. Ide szállították a kőhalmi csaták áldozatait. Az 1920-as és az 1930-as évek első felében, amikor még nem volt az óvodások és az iskolások számára elégséges osztályterem, ez az épület nyújtott akkor is éveken át szállást a tanulóknak. Számos kulturális rendezvénynek adott helyet az épület tágas előcsarnoka. Az 1950-56-os években a bányavállalathoz helyezett munkaszolgálatos katonák kaszárnyájaként több mint 300 főnyi legénységnek adott szállást. Az épület jobb szárnyát öt évtizeden át használták egészségügyi és állategészségügyi központként, valamint a Mezőgazdasági Termelő Szövetkezet raktáraként.</p>
+                <p>A Hoffmann-kúriába költözött iskola terveink szerint Keöpeczi Sebestyén József világhírű heraldikus nevét fogja viselni.</p>
+            </section>
+        </div>
+        <div class="container">
+         <section id="kapcsolat" class="section">
+                <h2>Kapcsolat</h2>
+                <div class="quick-info">
+                    <div class="info-card">
+                        <h4>📧 Email</h4>
+                        <p>titkarsag@iskolank.hu</p>
+                        <p>igazgato@iskolank.hu</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>📞 Telefon</h4>
+                        <p>+36 30 123 4567</p>
+                        <p>+36 20 987 6543</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>📍 Cím</h4>
+                        <p>Tanulás utca 12.</p>
+                        <p>Városaink, Megye</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🕒 Nyitvatartás</h4>
+                        <p>Hétfő - Péntek: 8:00 - 17:00</p>
+                        <p>Titkárság: 8:00 - 16:00</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Küldetésünk</h4>
+                    <p>Minden gyermeknek minőségi oktatást nyújtani biztonságos és inspiráló környezetben, felkészítve őket a jövőre.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Értékeink</h4>
+                    <p>Tisztelet, Empátia, Kreativitás, Oktatási Kiválóság, Együttműködés a Családokkal.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Közösségünk</h4>
+                    <p>40 boldog gyermek, 8 elkötelezett pedagógus, részt vevő családok és egy egyesített közösség az oktatásért.</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Iskolánk. Minden jog fenntartva. | Szeretettel tervezve gyermekeinknek.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add a simple header shadow effect when scrolling
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.2)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osztályaink - Iskolánk</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #4a7bc8 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        .quick-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .info-card {
+            background: #f0f8ff;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 5px solid #4a7bc8;
+        }
+
+        .info-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+        }
+
+        nav {
+            background-color: #1e3d72;
+            padding: 15px 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu li a:hover, .nav-menu li a.active {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+
+        main {
+            padding: 40px 0;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .page-title h1 {
+            color: #2c5aa0;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .page-title p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .class-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            border-left: 8px solid #4a7bc8;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .class-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .class-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #4a7bc8, #667eea);
+            border-radius: 0 15px 0 100px;
+            opacity: 0.1;
+        }
+
+        .class-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .class-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+
+        .class-info {
+            margin-bottom: 20px;
+        }
+
+        .class-info p {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: #f8f9ff;
+            border-radius: 5px;
+            border-left: 3px solid #4a7bc8;
+        }
+
+        .class-info strong {
+            color: #2c5aa0;
+        }
+
+        .class-description {
+            color: #555;
+            font-style: italic;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .teaching-methods {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+
+        .teaching-methods h2 {
+            color: #2c5aa0;
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .method-item {
+            padding: 25px;
+            background: #f0f8ff;
+            border-radius: 10px;
+            border-left: 5px solid #4a7bc8;
+        }
+
+        .method-item h4 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .method-item p {
+            color: #555;
+        }
+        .section {
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            color: #2c5aa0;
+            margin-bottom: 20px;
+            font-size: 28px;
+            border-bottom: 3px solid #4a7bc8;
+            padding-bottom: 10px;
+        }
+
+        footer {
+            background-color: #1e3d72;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: #4a7bc8;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                text-align: center;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .page-title h1 {
+                font-size: 28px;
+            }
+            
+            .class-card, .page-title, .teaching-methods {
+                padding: 20px;
+            }
+            
+            .classes-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <a href="index.html" class="logo">Iskolánk</a>
+                    <div class="tagline">Szeretettel és tisztelettel tanulni</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="osztalyok.html" class="active">Osztályaink</a></li>
+                <li><a href="dokumentumok.html">Dokumentumok</a></li>
+                <li><a href="tortenet.html">Történet</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="page-title">
+                <h1>Osztályaink</h1>
+                <p>Ismerje meg kis közösségünk osztályait és az egyedi oktatási módszereinket</p>
+            </div>
+
+            <div class="classes-grid">
+                <div class="class-card">
+                    <span class="class-icon">🐻</span>
+                    <h3>Óvoda</h3>
+                    <div class="class-info">
+                        <p><strong>Életkor:</strong> 3-6 év</p>
+                        <p><strong>Gyermekek száma:</strong> 12</p>
+                        <p><strong>Óvodapedagógusok:</strong> Rancz Ildikó</p>
+                        <p><strong>Névsor:</strong></p>
+                    </div>
+                    <div class="class-description">
+                        <p>Korai fejlesztési program játékra, kreativitásra és szocializációra helyezve a hangsúlyt. Felkészítés az általános iskolára játékos és oktatási tevékenységeken keresztül. Hangsúlyt fektetünk a természettel való kapcsolat kialakítására és a közösségi életre.</p>
+                    </div>
+                </div>
+
+                <div class="class-card">
+                    <span class="class-icon">📚</span>
+                    <h3>Előkészítő-I. osztály</h3>
+                    <div class="class-info">
+                        <p><strong>Életkor:</strong> 6-7 év</p>
+                        <p><strong>Tanulók száma:</strong> 9</p>
+                        <p><strong>Tanítónő: </strong>Kiss Tünde-Ibolya</p>
+                        <p><strong>Névsor:</strong></p>
+                    </div>
+                    <div class="class-description">
+                        <p>Az első tanév az olvasás, írás és számolás tanulásával. Fokozatos alkalmazkodás az iskolai környezethez sok egyéni támogatással. Játékos módszerekkel könnyítjük meg az átmenetet az óvodából az iskolába, és építünk a gyermekek természetes kíváncsiságára.</p>
+                    </div>
+                </div>
+
+                <div class="class-card">
+                    <span class="class-icon">✏️</span>
+                    <h3>II-III. osztály</h3>
+                    <div class="class-info">
+                        <p><strong>Életkor:</strong> 7-8 év</p>
+                        <p><strong>Tanulók száma:</strong> 9</p>
+                        <p><strong>Tanítónő:</strong> Nagy Adél</p>
+                        <p><strong>Névsor:</strong></p>
+                    </div>
+                    <div class="class-description">
+                        <p>Az alapvető ismeretek megszilárdítása és a tanulás terén való önállóság fejlesztése. Hangsúly a kritikai gondolkodáson és kreativitáson. Bevezetjük a projektmunka alapjait és ösztönözzük a csoportos problémamegoldást.</p>
+                    </div>
+                </div>
+
+                <div class="class-card">
+                    <span class="class-icon">📚</span>
+                    <h3>IV. osztály</h3>
+                    <div class="class-info">
+                        <p><strong>Életkor:</strong> 6-7 év</p>
+                        <p><strong>Tanulók száma:</strong> 9</p>
+                        <p><strong>Tanítónő:</strong> Kovács Ilona-Éva </p>
+                        <p><strong>Névsor:</strong></p>
+                    </div>
+                    <div class="class-description">
+                        <p>Az első tanév az olvasás, írás és számolás tanulásával. Fokozatos alkalmazkodás az iskolai környezethez sok egyéni támogatással. Játékos módszerekkel könnyítjük meg az átmenetet az óvodából az iskolába, és építünk a gyermekek természetes kíváncsiságára.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="teaching-methods">
+                <h2>Oktatási Módszereink</h2>
+                <div class="methods-grid">
+                    <div class="method-item">
+                        <h4>🎨 Személyre Szabott Tanulás</h4>
+                        <p>Minden gyermek egyedi tanulási stílusához igazítjuk az oktatást, biztosítva, hogy mindenki a saját tempójában fejlődhessen.</p>
+                    </div>
+                    <div class="method-item">
+                        <h4>🌱 Projektalapú Oktatás</h4>
+                        <p>Valós problémák megoldásán keresztül tanulnak a gyerekek, fejlesztve kreativitásukat és kritikai gondolkodásukat.</p>
+                    </div>
+                    <div class="method-item">
+                        <h4>🤝 Közösségi Tanulás</h4>
+                        <p>Ösztönözzük a gyermekeket, hogy tanuljanak egymástól és segítsék társaikat a tanulási folyamatban.</p>
+                    </div>
+                    <div class="method-item">
+                        <h4>🌿 Természetközeli Nevelés</h4>
+                        <p>Kihasználjuk az iskola körüli természetes környezetet az aktív tanulás és felfedezés ösztönzésére.</p>
+                    </div>
+                    <div class="method-item">
+                        <h4>💭 Érzelmi Intelligencia</h4>
+                        <p>Fejlesztjük a gyermekek érzelmi intelligenciáját, empátiáját és konfliktuskezelési képességeit.</p>
+                    </div>
+                    <div class="method-item">
+                        <h4>📖 Olvasáskultúra</h4>
+                        <p>Minden nap szentelünk időt az olvasásnak, és ösztönözzük a könyvek iránti szeretetet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+         <section id="kapcsolat" class="section">
+                <h2>Kapcsolat</h2>
+                <div class="quick-info">
+                    <div class="info-card">
+                        <h4>📧 Email</h4>
+                        <p>titkarsag@iskolank.hu</p>
+                        <p>igazgato@iskolank.hu</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>📞 Telefon</h4>
+                        <p>+36 30 123 4567</p>
+                        <p>+36 20 987 6543</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>📍 Cím</h4>
+                        <p>Tanulás utca 12.</p>
+                        <p>Városaink, Megye</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🕒 Nyitvatartás</h4>
+                        <p>Hétfő - Péntek: 8:00 - 17:00</p>
+                        <p>Titkárság: 8:00 - 16:00</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Küldetésünk</h4>
+                    <p>Minden gyermeknek minőségi oktatást nyújtani biztonságos és inspiráló környezetben, felkészítve őket a jövőre.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Értékeink</h4>
+                    <p>Tisztelet, Empátia, Kreativitás, Oktatási Kiválóság, Együttműködés a Családokkal.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Közösségünk</h4>
+                    <p>40 boldog gyermek, 8 elkötelezett pedagógus, részt vevő családok és egy egyesített közösség az oktatásért.</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Iskolánk. Minden jog fenntartva. | Szeretettel tervezve gyermekeinknek.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add a simple header shadow effect when scrolling
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.2)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
