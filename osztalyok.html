@@ -199,6 +199,85 @@
             border: 1px solid #eee;
         }
 
+        /* Névsor dropdown styles */
+        .nevsor-dropdown {
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .dropdown-btn {
+            width: 100%;
+            padding: 12px 16px;
+            background: #f8f9ff;
+            border: 2px solid #e0e7ff;
+            border-left: 3px solid #4a7bc8;
+            border-radius: 5px;
+            color: #2c5aa0;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Georgia', serif;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-btn:hover {
+            background: #e0e7ff;
+            border-color: #4a7bc8;
+        }
+
+        .dropdown-btn.active {
+            background: #e0e7ff;
+            border-color: #4a7bc8;
+        }
+
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+            font-size: 12px;
+        }
+
+        .dropdown-btn.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 2px solid #4a7bc8;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            color: #333;
+        }
+
+        .dropdown-item:hover {
+            background: #f0f8ff;
+            color: #2c5aa0;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
         .teaching-methods {
             background: white;
             padding: 40px;
@@ -336,6 +415,26 @@
                         <p><strong>Gyermekek száma:</strong> 12</p>
                         <p><strong>Óvodapedagógusok:</strong> Rancz Ildikó</p>
                         <p><strong>Névsor:</strong></p>
+                        <div class="nevsor-dropdown">
+                            <div class="dropdown-btn" onclick="toggleDropdown(this)">
+                               <strong> Gyermekek nevei (12 fő)</strong>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <div class="dropdown-content">
+                                <div class="dropdown-item">1. Tanuló</div>
+                                <div class="dropdown-item">2. Tanuló</div>
+                                <div class="dropdown-item">3. Tanuló</div>
+                                <div class="dropdown-item">4. Tanuló</div>
+                                <div class="dropdown-item">5. Tanuló</div>
+                                <div class="dropdown-item">6. Tanuló</div>
+                                <div class="dropdown-item">7. Tanuló</div>
+                                <div class="dropdown-item">8. Tanuló</div>
+                                <div class="dropdown-item">9. Tanuló</div>
+                                <div class="dropdown-item">10. Tanuló</div>
+                                <div class="dropdown-item">11. Tanuló</div>
+                                <div class="dropdown-item">12. Tanuló</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="class-description">
                         <p>Korai fejlesztési program játékra, kreativitásra és szocializációra helyezve a hangsúlyt. Felkészítés az általános iskolára játékos és oktatási tevékenységeken keresztül. Hangsúlyt fektetünk a természettel való kapcsolat kialakítására és a közösségi életre.</p>
@@ -350,6 +449,23 @@
                         <p><strong>Tanulók száma:</strong> 9</p>
                         <p><strong>Tanítónő: </strong>Kiss Tünde-Ibolya</p>
                         <p><strong>Névsor:</strong></p>
+                        <div class="nevsor-dropdown">
+                            <div class="dropdown-btn" onclick="toggleDropdown(this)">
+                               <strong> Tanulók nevei (9 fő) </strong>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <div class="dropdown-content">
+                                <div class="dropdown-item">1. Tanuló</div>
+                                <div class="dropdown-item">2. Tanuló</div>
+                                <div class="dropdown-item">3. Tanuló</div>
+                                <div class="dropdown-item">4. Tanuló</div>
+                                <div class="dropdown-item">5. Tanuló</div>
+                                <div class="dropdown-item">6. Tanuló</div>
+                                <div class="dropdown-item">7. Tanuló</div>
+                                <div class="dropdown-item">8. Tanuló</div>
+                                <div class="dropdown-item">9. Tanuló</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="class-description">
                         <p>Az első tanév az olvasás, írás és számolás tanulásával. Fokozatos alkalmazkodás az iskolai környezethez sok egyéni támogatással. Játékos módszerekkel könnyítjük meg az átmenetet az óvodából az iskolába, és építünk a gyermekek természetes kíváncsiságára.</p>
@@ -364,6 +480,23 @@
                         <p><strong>Tanulók száma:</strong> 9</p>
                         <p><strong>Tanítónő:</strong> Nagy Adél</p>
                         <p><strong>Névsor:</strong></p>
+                        <div class="nevsor-dropdown">
+                            <div class="dropdown-btn" onclick="toggleDropdown(this)">
+                                <strong> Tanulók nevei (9 fő) </strong>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <div class="dropdown-content">
+                                <div class="dropdown-item">1. Tanuló</div>
+                                <div class="dropdown-item">2. Tanuló</div>
+                                <div class="dropdown-item">3. Tanuló</div>
+                                <div class="dropdown-item">4. Tanuló</div>
+                                <div class="dropdown-item">5. Tanuló</div>
+                                <div class="dropdown-item">6. Tanuló</div>
+                                <div class="dropdown-item">7. Tanuló</div>
+                                <div class="dropdown-item">8. Tanuló</div>
+                                <div class="dropdown-item">9. Tanuló</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="class-description">
                         <p>Az alapvető ismeretek megszilárdítása és a tanulás terén való önállóság fejlesztése. Hangsúly a kritikai gondolkodáson és kreativitáson. Bevezetjük a projektmunka alapjait és ösztönözzük a csoportos problémamegoldást.</p>
@@ -374,13 +507,30 @@
                     <span class="class-icon">📚</span>
                     <h3>IV. osztály</h3>
                     <div class="class-info">
-                        <p><strong>Életkor:</strong> 6-7 év</p>
+                        <p><strong>Életkor:</strong> 9-10 év</p>
                         <p><strong>Tanulók száma:</strong> 9</p>
                         <p><strong>Tanítónő:</strong> Kovács Ilona-Éva </p>
                         <p><strong>Névsor:</strong></p>
+                        <div class="nevsor-dropdown">
+                            <div class="dropdown-btn" onclick="toggleDropdown(this)">
+                                <strong> Tanulók nevei (9 fő) </strong>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <div class="dropdown-content">
+                                <div class="dropdown-item">1. Tanuló</div>
+                                <div class="dropdown-item">2. Tanuló</div>
+                                <div class="dropdown-item">3. Tanuló</div>
+                                <div class="dropdown-item">4. Tanuló</div>
+                                <div class="dropdown-item">5. Tanuló</div>
+                                <div class="dropdown-item">6. Tanuló</div>
+                                <div class="dropdown-item">7. Tanuló</div>
+                                <div class="dropdown-item">8. Tanuló</div>
+                                <div class="dropdown-item">9. Tanuló</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="class-description">
-                        <p>Az első tanév az olvasás, írás és számolás tanulásával. Fokozatos alkalmazkodás az iskolai környezethez sok egyéni támogatással. Játékos módszerekkel könnyítjük meg az átmenetet az óvodából az iskolába, és építünk a gyermekek természetes kíváncsiságára.</p>
+                        <p>Mélyebb tudás szerzése minden tantárgyban és a felsőbb évfolyamokra való felkészítés. Nagyobb hangsúly az önálló munkán és a kutatási készségek fejlesztésén. A tanulók már képesek összetettebb projektek megvalósítására és prezentálására.</p>
                     </div>
                 </div>
             </div>
@@ -474,6 +624,47 @@
             } else {
                 header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             }
+        });
+
+        // Dropdown functionality
+        function toggleDropdown(button) {
+            const dropdown = button.nextElementSibling;
+            const isOpen = dropdown.classList.contains('show');
+            
+            // Close all dropdowns first
+            document.querySelectorAll('.dropdown-content').forEach(dd => {
+                dd.classList.remove('show');
+            });
+            document.querySelectorAll('.dropdown-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Toggle current dropdown
+            if (!isOpen) {
+                dropdown.classList.add('show');
+                button.classList.add('active');
+            }
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.nevsor-dropdown')) {
+                document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                    dropdown.classList.remove('show');
+                });
+                document.querySelectorAll('.dropdown-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+            }
+        });
+
+        // Handle dropdown item clicks
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.stopPropagation();
+                // You can add functionality here to handle when a name is clicked
+                console.log('Kiválasztott tanuló:', this.textContent);
+            });
         });
     </script>
 </body>
